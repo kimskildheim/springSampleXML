@@ -5,7 +5,8 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean name="customerRepository"
-          class="no.skildheim.repository.HibernateCustomerRepositoryImpl"></bean>
+          class="no.skildheim.repository.HibernateCustomerRepositoryImpl">
+    </bean>
 
     <!-- Setter injection -->
     <!-- <bean name="customerService"
@@ -20,9 +21,22 @@
         <constructor-arg index="0" ref="customerRepository"></constructor-arg>
     </bean> -->
 
+    <!--Autowire by constructor-->
+    <!--<bean name="customerService"-->
+            <!--class="no.skildheim.service.CustomerServiceImpl" autowire="constructor">-->
+    <!--</bean>-->
+
+    <!--Autowire by type-->
     <bean name="customerService"
-            class="no.skildheim.service.CustomerServiceImpl">
-        <constructor-arg index="0" ref="customerRepository"></constructor-arg>
+          class="no.skildheim.service.CustomerServiceImpl" autowire="byType">
     </bean>
+
+    <!--Autowire by name-->
+    <!--<bean name="foo"-->
+          <!--class="no.skildheim.repository.HibernateCustomerRepositoryImpl">-->
+    <!--</bean>-->
+    <!--<bean name="customerService"-->
+          <!--class="no.skildheim.service.CustomerServiceImpl" autowire="byName">-->
+    <!--</bean>-->
 
 </beans>
