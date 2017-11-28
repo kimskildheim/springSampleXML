@@ -28,7 +28,9 @@
 
     <!--Autowire by type-->
     <bean name="customerService"
-          class="no.skildheim.service.CustomerServiceImpl" autowire="byType">
+          class="no.skildheim.service.CustomerServiceImpl"
+          autowire="byType"
+          scope="singleton">
     </bean>
 
     <!--Autowire by name-->
